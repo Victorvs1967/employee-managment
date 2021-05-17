@@ -28,7 +28,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "bootstrap/dist/css/bootstrap.min.css"
+              "bootstrap/scss/bootstrap.scss"
             ],
             "scripts": []
           },
@@ -96,7 +96,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "bootstrap/dist/css/bootstrap.min.css"
+              "bootstrap/scss/bootstrap.scss"
             ],
             "scripts": []
           }

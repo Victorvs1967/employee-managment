@@ -1,0 +1,13 @@
+<header class="mb-4">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark px-4">
+    <div><a href="/" class="navbar-brand">EmloyeesApp</a></div>
+    <ul class="navbar-nav w-100">
+      <li><a *ngIf="auth.isUserLoggedIn()" class="nav-link" routerLink="/">View Employees</a></li>
+      <li><a *ngIf="auth.isUserLoggedIn()" class="nav-link" routerLink="/addemployee">Add Employee</a></li>
+      <div style="margin-left: auto;">
+        <li><a *ngIf="!auth.isUserLoggedIn()" class="nav-link ml-auto" routerLink="/login">Login</a></li>
+        <li><a *ngIf="auth.isUserLoggedIn()" class="nav-link text-align-right" routerLink="/logout">Logout</a></li>        
+      </div>
+    </ul>
+  </nav>
+</header>

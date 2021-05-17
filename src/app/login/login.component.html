@@ -1,0 +1,12 @@
+<div class="col-md-6 mx-auto">
+  <h2>Login</h2>
+  <div class="form-group mb-2">
+    <label for="username">Username: </label>
+    <input class="form-control mb-2" type="text" name="username" [(ngModel)]="username" />
+  </div>
+  <div class="form-group">
+    <label for="password">Password: </label>
+    <input class="form-control mb-2" type="password" name="password" [(ngModel)]="password" />
+  </div>
+  <button class="btn btn-success" (click)="checkLogin()">Login</button>
+</div>

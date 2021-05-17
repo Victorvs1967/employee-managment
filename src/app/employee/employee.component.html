@@ -1,6 +1,6 @@
-<div class="container p-4">
-  <h3 class="text-center">Employees</h3>
-  <table class="table table-striped w-75 mx-auto">
+<div class="container col-md-6">
+  <h3>Employees</h3>
+  <table class="table table-striped mx-auto">
     <thead>
       <tr>
         <th scope="col">name</th>
@@ -13,6 +13,7 @@
         <td>{{ employee.name }}</td>
         <td>{{ employee.designation }}</td>
         <td>{{ employee.salary | currency }}</td>
+        <td><button class="btn btn-danger" (click)="deleteEmployee(employee)">Delete employee</button></td>
       </tr>
     </tbody>
   </table>

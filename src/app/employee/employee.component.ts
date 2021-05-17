@@ -17,4 +17,9 @@ export class EmployeeComponent implements OnInit {
     this.httpClientService.getEmployee().subscribe(response => this.employees = response);
   }
 
+  deleteEmployee(employee: Employee): void {
+    this.httpClientService.deleteEmployee(employee)
+          .subscribe(data => this.employees = this.employees?.filter(e => e !== employee));
+  }
+
 }
