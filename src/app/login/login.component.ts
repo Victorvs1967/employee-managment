@@ -19,11 +19,9 @@ export class LoginComponent implements OnInit {
   }
 
   checkLogin(): void {
-    if (this.auth.authenticate(this.username, this.password)) {
+    this.auth.authenticate(this.username, this.password).subscribe(data => {
       this.router.navigate(['']);
       this.invalideLogin = false;
-    } else {
-      this.invalideLogin = true;
-    }
+    }, error => this.invalideLogin = true);
   }
 }

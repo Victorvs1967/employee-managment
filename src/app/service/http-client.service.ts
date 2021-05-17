@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Employee } from '../model/employee.model';
 import { Observable } from 'rxjs';
 
@@ -12,14 +12,23 @@ export class HttpClientService {
 
   getEmployee(): Observable<Employee[]> {
     console.log('test call');
-    return this.httpClient.get<Employee[]>('http://localhost:8080/employees');
+    let username = 'victor';
+    let password = 'victor77';
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+    return this.httpClient.get<Employee[]>('http://localhost:8080/employees', { headers });
   }
 
   public deleteEmployee(employee: Employee): Observable<Employee> {
-    return this.httpClient.delete<Employee>(`http://localhost:8080/employees/${employee.id}`);
+    let username = 'victor';
+    let password = 'victor77';
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+    return this.httpClient.delete<Employee>(`http://localhost:8080/employees/${employee.id}`, { headers });
   }
 
   public createEmployee(employee: Employee): Observable<Employee> {
-    return this.httpClient.post<Employee>('http://localhost:8080/employees', employee);
+    let username = 'victor';
+    let password = 'victor77';
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+    return this.httpClient.post<Employee>('http://localhost:8080/employees', employee, { headers });
   }
 }
