@@ -1,0 +1,19 @@
+<div class="container p-4">
+  <h3 class="text-center">Employees</h3>
+  <table class="table table-striped w-75 mx-auto">
+    <thead>
+      <tr>
+        <th scope="col">name</th>
+        <th scope="col">designation</th>
+        <th scope="col">salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.designation }}</td>
+        <td>{{ employee.salary | currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
