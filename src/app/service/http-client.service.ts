@@ -8,27 +8,25 @@ import { Observable } from 'rxjs';
 })
 export class HttpClientService {
 
+  userData = {
+    username: 'victor',
+    password: 'victor77'
+  };
+
   constructor(private httpClient: HttpClient) { }
 
   getEmployee(): Observable<Employee[]> {
-    console.log('test call');
-    let username = 'victor';
-    let password = 'victor77';
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+    const headers: HttpHeaders = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.userData.username + ':' + this.userData.password) });
     return this.httpClient.get<Employee[]>('http://localhost:8080/employees', { headers });
   }
 
   public deleteEmployee(employee: Employee): Observable<Employee> {
-    let username = 'victor';
-    let password = 'victor77';
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+    const headers: HttpHeaders = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.userData.username + ':' + this.userData.password) });
     return this.httpClient.delete<Employee>(`http://localhost:8080/employees/${employee.id}`, { headers });
   }
 
   public createEmployee(employee: Employee): Observable<Employee> {
-    let username = 'victor';
-    let password = 'victor77';
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+    const headers: HttpHeaders = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.userData.username + ':' + this.userData.password) });
     return this.httpClient.post<Employee>('http://localhost:8080/employees', employee, { headers });
   }
 }
